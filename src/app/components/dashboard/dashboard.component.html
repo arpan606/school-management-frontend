@@ -1,0 +1,26 @@
+<div class="dashboard-container">
+    <app-topNavBar></app-topNavBar>
+    <app-sideNavBar></app-sideNavBar>
+    <app-announcement></app-announcement>
+    <div class="dasboard-middle-section">
+        <div class="greeting-section">
+            <h1>Good Morning, Nidhi 👋</h1>
+            <h4>todayDate</h4>
+        </div>
+        <div class="chart-section">
+            <div class="line-chart">
+                <!-- <canvas baseChart [data]="barChartData" [options]="barChartOptions" [plugins]="barChartPlugins"
+                    [legend]="barChartLegend" [type]="'bar'">
+                </canvas> -->
+            </div>
+            <div class="Doughnut-chart">
+                <canvas baseChart [labels]="doughnutChartLabels" [datasets]="doughnutChartDatasets"
+                    [options]="doughnutChartOptions" [legend]="true" [type]="'doughnut'">
+                </canvas>
+            </div>
+        </div>
+        <div class="schedule-section">
+            <app-schedules></app-schedules>
+        </div>
+    </div>
+</div>

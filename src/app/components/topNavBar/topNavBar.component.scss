@@ -1,0 +1,33 @@
+.topNavBar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8vh;
+    width: 100vw;
+    background: #ededed;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
+    padding-left: 200px;
+    padding-right: 50px;
+    box-sizing: border-box;
+    // border-bottom: 0.5px solid #787878;
+
+    .topNavBar-icons {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: 15%;
+        justify-content: space-between;
+
+        .user-profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background-color: rgb(236, 174, 174);
+        }
+
+    }
+
+}

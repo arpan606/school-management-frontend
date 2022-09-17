@@ -1,0 +1,70 @@
+.sideNavBar {
+    width: 15vw;
+    color: #000000;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1.5% 1%;
+    background-color: #ededed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+
+    .sideNavBar-heading {
+        width: 100%;
+        font-size: 25px;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sideNavBar-container {
+        width: 100%;
+        display: flex;
+        min-height: 30%;
+        flex-direction: column;
+        margin-top: 25px;
+        justify-content: space-around;
+        font-weight: 400;
+
+        .sideNavBar-icon-container {
+            display: flex;
+            align-items: center;
+            text-align: right;
+            padding: 15px;
+            cursor: pointer;
+
+            mat-icon{
+                margin-right: 8%;
+
+            }
+
+        }
+
+        .sideNavBar-icon-container:hover {
+            background-color: #0096d3;
+            border-radius: 10px;
+            color: #f1f1f1;
+        }
+
+    }
+}
+
+
+.collpaseSideNavBar {
+    width: 4.5%;
+    padding: 1%;
+
+    .sideNavBar-container .sideNavBar-icon-container {
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        box-sizing: content-box;
+    }
+
+    .sideNavBar-container .sideNavBar-icon-container:hover {
+        background-color: transparent;
+    }
+
+}
