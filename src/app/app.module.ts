@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AssignmentComponent } from './components/assignment/assignment.component';
 import { SyllabusComponent } from './components/syllabus/syllabus.component';
 import { GradesComponent } from './components/grades/grades.component';
+import { AccountComponent } from './components/accounts/accounts.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { GradesComponent } from './components/grades/grades.component';
         ScheduleComponent,
         AssignmentComponent,
         SyllabusComponent,
-        GradesComponent
+        GradesComponent,
+        AccountComponent
     ],
     imports: [
         BrowserModule,

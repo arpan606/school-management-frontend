@@ -1,3 +1,5 @@
+@import "../../../assets/scss/screen-size.scss";
+
 .announcement-container {
     position: absolute;
     top: 10vh; // height of topnavbar=8vw;
@@ -8,7 +10,6 @@
     width: 20vw;
     height: 88vh;
     padding: 20px;
-    // border: 0.5px solid #787878;
 
 
     .announcement-header {
@@ -75,5 +76,14 @@
 
     .announcement-body-container::-webkit-scrollbar {
         display: none;
+    }
+}
+
+
+@media screen and (max-width:650px) {
+
+    .announcement-container {
+
+       display: none;
     }
 }

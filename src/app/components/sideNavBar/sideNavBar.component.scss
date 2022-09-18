@@ -1,3 +1,5 @@
+@import "../../../assets/scss/screen-size.scss";
+
 .sideNavBar {
     width: 15vw;
     color: #000000;
@@ -19,6 +21,7 @@
         justify-content: space-between;
     }
 
+
     .sideNavBar-container {
         width: 100%;
         display: flex;
@@ -35,9 +38,17 @@
             padding: 15px;
             cursor: pointer;
 
-            mat-icon{
-                margin-right: 8%;
+            a {
+                display: flex;
+                align-items: center;
+                text-align: right;
+                width: 100%;
 
+
+                mat-icon {
+                    margin-right: 5%;
+
+                }
             }
 
         }
@@ -67,4 +78,81 @@
         background-color: transparent;
     }
 
+}
+
+
+@media screen and (max-width:1300px) {
+    .sideNavBar {
+        width: 10vw;
+
+        .sideNavBar-heading {
+            display: none;
+        }
+
+        .sideNavBar-container {
+            margin-top: 50px;
+            min-height: 50%;
+
+            .sideNavBar-icon-container {
+                cursor: pointer;
+                padding: 5px 2px;
+
+                mat-icon {
+                    margin-right: 0%;
+                    margin-left: 30%;
+
+                }
+
+                span {
+                    display: none;
+                }
+
+            }
+
+            .sideNavBar-icon-container:hover {
+                background-color: #0096d3;
+                border-radius: 10px;
+                color: #f1f1f1;
+            }
+
+        }
+    }
+}
+
+
+@media screen and (max-width:$mobile-max) {
+    .sideNavBar {
+        position: fixed;
+        height: 8vh;
+        top:92vh;
+        width: 100%;
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+
+        .sideNavBar-container {
+            flex-direction: row;
+            width: 100%;
+            margin-top: 0px;
+
+            .sideNavBar-icon-container {
+                cursor: pointer;
+                padding: 2px;
+
+                mat-icon {
+                    margin-right: 0%;
+                    margin-left: 0%;
+                }
+
+                span {
+                    display: none;
+                }
+
+            }
+
+        }
+
+    }
 }

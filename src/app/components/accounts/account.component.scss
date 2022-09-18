@@ -1,0 +1,195 @@
+@import "../../../assets/scss/screen-size.scss";
+
+.account-container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+
+    .account-section {
+        position: absolute;
+        top: 10vh;
+        left: 16vw;
+        width: 83vw;
+        height: 88vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+
+        .heading {
+            width: 100%;
+            text-align: left;
+        }
+
+        .account-setting {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+            .profile-picture {
+
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+
+                .picture {
+                    width: 45%;
+                    aspect-ratio: 1;
+                    border-radius: 100%;
+                    background-color: aliceblue;
+                }
+
+
+            }
+
+            .student-details {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+
+                .detail {
+                    display: flex;
+                    flex-direction: row;
+                    width: 80%;
+                    padding: 8px;
+                    margin: 5px 0px;
+
+                    .headers {
+                        width: 30%;
+                        text-align: left;
+                        color: #0096d3;
+                        font-weight: 500;
+                    }
+
+                    .value {
+                        width: 30%;
+                        text-align: left;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+
+
+@media screen and (max-width:$desktop-avg) {
+
+    .account-container {
+
+        .account-section {
+            left: 11vw;
+            width: 87vw;
+
+            .account-setting {
+
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .profile-picture {
+                    width: 100%;
+                    margin-bottom: 20px;
+
+
+                    .picture {
+                        width: 60%;
+                    }
+
+
+                }
+
+                .student-details {
+                    width: 100%;
+
+                    .detail {
+
+
+                        .headers {
+                            width: 40%;
+                        }
+
+                        .value {
+                            width: 40%;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+}
+
+@media screen and (max-width:$mobile-max) {
+
+    .account-container {
+
+        .account-section {
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 98vw;
+
+
+            .account-setting {
+
+                .profile-picture {
+
+                    .picture {
+                        width: 75%;
+                    }
+
+                }
+
+                .student-details {
+
+                    width: 100%;
+
+                    .detail {
+                        width: 100%;
+
+                        .headers {
+                            width: 50%;
+                        }
+
+                        .value {
+                            width: 50%;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+
+}

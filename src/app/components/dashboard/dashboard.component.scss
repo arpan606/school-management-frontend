@@ -1,3 +1,6 @@
+@import "../../../assets/scss/screen-size.scss";
+
+
 .dashboard-container {
     height: 100vh;
     width: 100vw;
@@ -9,7 +12,7 @@
     .dasboard-middle-section {
         position: absolute;
         top: 10vh;
-        left:16vw;
+        left: 16vw;
         width: 62vw;
         // border: 0.5px solid #787878;
         height: 88vh;
@@ -55,8 +58,8 @@
             }
         }
 
-        .schedule-section{
-            width:100%;
+        .schedule-section {
+            width: 100%;
         }
     }
 
@@ -64,4 +67,55 @@
         display: none;
     }
 
+}
+
+
+@media screen and (max-width:$mobile-max) {
+
+    .dashboard-container {
+
+
+        .dasboard-middle-section {
+            width: 100%;
+            left: 0;
+            padding: 25px;
+            height: auto;
+            box-sizing: border-box;
+
+            .greeting-section {
+            }
+
+            .chart-section {
+                box-sizing: border-box;
+                flex-direction: column;
+                height: auto;
+                box-sizing: border-box;
+
+
+                .Doughnut-chart {
+                    width: 100%;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                }
+
+                .line-chart {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                }
+            }
+
+            .schedule-section {}
+        }
+
+
+
+    }
 }

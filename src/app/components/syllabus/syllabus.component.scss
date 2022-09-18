@@ -1,3 +1,6 @@
+@import "../../../assets/scss/screen-size.scss";
+
+
 .syllabus-container {
     height: 100vh;
     width: 100vw;
@@ -51,14 +54,14 @@
                 flex-wrap: wrap;
 
                 .syllabus-box {
-                    width: 20%;
-                    height: 20vh;
+                    width: 28%;
+                    height: 25vh;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
                     align-items: center;
                     padding: 15px;
-                    margin: 15px;
+                    margin: 5px;
                     box-shadow: rgba(3, 102, 214, 0.3) 0px 1px 2px 0px, rgba(3, 102, 214, 0.3) 0px 2px 6px 2px;
                     // box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 
@@ -87,6 +90,66 @@
             }
         }
 
+
+    }
+
+}
+
+
+@media screen and (max-width:$desktop-avg) {
+
+    .syllabus-container {
+
+        .syllabus-section {
+            left: 11vw;
+            width: 88vw;
+            padding: 5px;
+
+            .main-container {
+
+                .subcontainer {
+                    padding: 10px;
+
+                    .syllabus-box {
+                        width: 42%;
+                        height: 25vh;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:$mobile-max) {
+
+    .syllabus-container {
+
+
+        .syllabus-section {
+
+            border: 2px solid red;
+            left: 0;
+            width: 98%;
+            right: 0;
+            margin: auto;
+
+            .main-container {
+
+
+                .subcontainer {
+                    justify-content: center;
+                    .syllabus-box {
+                        width: 70%;
+                        height: 25vh;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+
+        }
 
     }
 
