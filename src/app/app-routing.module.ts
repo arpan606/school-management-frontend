@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './components/accounts/accounts.component';
 import { AssignmentComponent } from './components/assignment/assignment.component';
+import { ChatsComponent } from './components/chats/chats.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GradesComponent } from './components/grades/grades.component';
 import { LoginComponent } from './components/login/login.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
         path: 'account',
         component: AccountComponent
+    },
+    {
+        path: 'chat',
+        component: ChatsComponent
     },
 ];
 

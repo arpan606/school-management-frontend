@@ -14,6 +14,7 @@ import { AssignmentComponent } from './components/assignment/assignment.componen
 import { SyllabusComponent } from './components/syllabus/syllabus.component';
 import { GradesComponent } from './components/grades/grades.component';
 import { AccountComponent } from './components/accounts/accounts.component';
+import { ChatsComponent } from './components/chats/chats.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AccountComponent } from './components/accounts/accounts.component';
         AssignmentComponent,
         SyllabusComponent,
         GradesComponent,
-        AccountComponent
+        AccountComponent,
+        ChatsComponent
     ],
     imports: [
         BrowserModule,

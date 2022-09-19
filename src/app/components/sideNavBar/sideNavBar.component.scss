@@ -6,7 +6,7 @@
     height: 100%;
     box-sizing: border-box;
     padding: 1.5% 1%;
-    background-color: #ededed;
+    background-color: #f0f2f5;
     position: absolute;
     left: 0;
     top: 0;
@@ -43,12 +43,19 @@
                 align-items: center;
                 text-align: right;
                 width: 100%;
+                text-decoration: none;
+                background-color: transparent;
 
 
                 mat-icon {
                     margin-right: 5%;
 
                 }
+            }
+
+            a:visited{
+                text-decoration: none;
+                color:black
             }
 
         }
