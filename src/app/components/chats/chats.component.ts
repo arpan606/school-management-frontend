@@ -11,11 +11,18 @@ export class ChatsComponent implements OnInit {
 
     constructor() { }
 
+    openChatContainer: boolean = false;
+
     ngOnInit(): void {
 
     }
 
-  
+    toggleChatContainer() {
+        console.log('hello');
+        this.openChatContainer = true;
+    }
+
+
 
 
 

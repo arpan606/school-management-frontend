@@ -121,6 +121,8 @@
 
         }
 
+
+
         .right-container {
 
             width: 70%;
@@ -206,11 +208,169 @@
                 align-items: center;
                 background-image: url('../../../assets/images/chat-background-image-3.webp');
                 background-position: center;
+                box-sizing: border-box;
 
-                .template {}
+
+
+                .template {
+
+                    width: 100%;
+                    height: 100%;
+                    box-sizing: border-box;
+                    position: relative;
+
+                    .footer {
+                        width: 100%;
+                        height: 7%;
+                        position: absolute;
+                        bottom: 0;
+                        background-color: rgb(240 242 245);
+                        box-sizing: border-box;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 10px 30px;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        input {
+                            border: none;
+                            width: 80%;
+                            height: 100%;
+
+                        }
+
+                        .send-button {}
+                    }
+
+                }
+
+
             }
         }
 
 
     }
+}
+
+
+
+
+@media screen and (max-width:$desktop-min) {
+
+
+    .chat-container {
+
+        .chat-section {
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 10vh;
+            left: 11vw;
+            width: 87vw;
+            height: 88vh;
+
+            .left-container {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+
+                .user-profile-container {
+                    height: 6%;
+                    padding: 10px;
+
+                    .profile-picture {
+                        margin-left: 2%;
+
+                    }
+
+                }
+
+
+
+            }
+
+
+            .left-container.active {
+                display: none;
+            }
+
+
+            .right-container {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                display: none;
+
+
+            }
+
+            .right-container.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+        }
+    }
+
+}
+
+@media screen and (max-width:$tablet-min) {
+
+
+    .chat-container {
+
+        .chat-section {
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 94%;
+            height: 80vh;
+
+            .left-container {
+
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+
+                .user-profile-container {
+                    height: 6%;
+                    padding: 10px;
+                    padding-left: 0px;
+                    border-right: 1px solid #dfe2e7;
+
+                    .profile-picture {
+                        height: 100%;
+                        aspect-ratio: 1;
+                        background-color: #ffffff;
+                        border-radius: 100%;
+                        margin-left: 2%;
+                    }
+
+                }
+
+            }
+
+
+            .left-container.active {
+                display: none;
+            }
+
+
+            .right-container {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                display: none;
+            }
+
+            .right-container.active {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+        }
+    }
+
 }

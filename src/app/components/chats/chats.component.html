@@ -3,7 +3,7 @@
     <app-sideNavBar></app-sideNavBar>
     <div class="chat-section">
 
-        <div class="left-container">
+        <div class="left-container" [ngClass]="openChatContainer?'active':''">
 
             <div class="user-profile-container">
                 <div class="profile-picture">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="side-chat-panel">
-                <div class="user-chats">
+                <div class="user-chats" (click)="toggleChatContainer()">
                     <div class="profile-picture">
                         <div class="picture">
 
@@ -304,9 +304,9 @@
             </div>
 
         </div>
-        <div class="right-container">
+        <div class="right-container" [ngClass]="openChatContainer?'active':''">
 
-            <div class="receiver-profile-container" >
+            <div class="receiver-profile-container">
                 <div class="receiver-profile-picture">
                 </div>
                 <div class="receiver-name">
@@ -328,9 +328,16 @@
                 </div>
             </div>
 
-            <div class="chat-template" >
+            <div class="chat-template">
                 <div class="template">
-                   
+
+                    <div class="footer">
+                        <input type="text">
+                        <div class="send-button">
+                            <mat-icon>send</mat-icon>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -341,3 +348,8 @@
 
     </div>
 </div>
+
+
+<!-- <div class="right-container" [ngClass]="openChatContainer?'active':''"> -->
+
+<!-- <div class="left-container" [ngClass]="openChatContainer?'active':''"> -->
