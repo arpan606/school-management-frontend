@@ -15,6 +15,10 @@ import { SyllabusComponent } from './components/syllabus/syllabus.component';
 import { GradesComponent } from './components/grades/grades.component';
 import { AccountComponent } from './components/accounts/accounts.component';
 import { ChatsComponent } from './components/chats/chats.component';
+import { FormsModule } from '@angular/forms';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -30,13 +34,26 @@ import { ChatsComponent } from './components/chats/chats.component';
         SyllabusComponent,
         GradesComponent,
         AccountComponent,
-        ChatsComponent
+        ChatsComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgChartsModule,
-        MatIconModule
+        MatIconModule,
+        FormsModule,
+        ToastrModule,
+        HttpClientModule,
+        ToastrModule.forRoot({
+            timeOut: 1500,
+            preventDuplicates: false,
+            closeButton: true,
+            progressBar: true,
+            progressAnimation: 'increasing',
+            tapToDismiss: true,
+        }),
+        ToastContainerModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

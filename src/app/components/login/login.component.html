@@ -10,27 +10,27 @@
             <div class="login-form">
                 <div class="row">
                     <div class="input-row">
-                        <input type="email" placeholder="1125698745">
+                        <input type="email" placeholder="1125698745" [(ngModel)]="schoolId">
                         <mat-icon>alternate_email</mat-icon>
                     </div>
                     <div class="input-tag">Enrollment Id</div>
                 </div>
                 <div class="row">
                     <div class="input-row">
-                        <input type="text" placeholder="MA1">
+                        <input type="text" placeholder="MA1"  [(ngModel)]="userId">
                         <mat-icon>school</mat-icon>
                     </div>
                     <div class="input-tag">School Id</div>
                 </div>
                 <div class="row">
                     <div class="input-row">
-                        <input type="password" placeholder="*********">
+                        <input type="password" placeholder="*********"  [(ngModel)]="password">
                         <mat-icon>lock</mat-icon>
                     </div>
                     <div class="input-tag">Password</div>
                 </div>
                 <div class="row">
-                    <button>
+                    <button (click)="handleLoginRequest()">
                         <H3>SIGN IN</H3>
                     </button>
                 </div>
