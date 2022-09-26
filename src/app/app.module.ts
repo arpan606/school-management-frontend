@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         GradesComponent,
         AccountComponent,
         ChatsComponent,
+        ChatsComponent,
     ],
     imports: [
         BrowserModule,
