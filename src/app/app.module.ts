@@ -2,40 +2,29 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AnnouncementComponent } from './components/announcement/announcement.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginComponent } from './components/login/login.component';
-import { ScheduleComponent } from './components/schedule/schedule.component';
-import { SideNavBarComponent } from './components/sideNavBar/sideNavBar.componet';
-import { TopNavBarComponent } from './components/topNavBar/topNavBar.component';
 import { NgChartsModule } from 'ng2-charts';
 import { MatIconModule } from '@angular/material/icon';
-import { AssignmentComponent } from './components/assignment/assignment.component';
-import { SyllabusComponent } from './components/syllabus/syllabus.component';
-import { GradesComponent } from './components/grades/grades.component';
-import { AccountComponent } from './components/accounts/accounts.component';
-import { ChatsComponent } from './components/chats/chats.component';
 import { FormsModule } from '@angular/forms';
 import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScheduleComponent } from './components/dashboard-components/schedule/schedule.component';
+import { AnnouncementComponent } from './components/dashboard-components/announcement/announcement.component';
+import { DashboardComponent } from './components/dashboard-components/dashboard/dashboard.component';
+import { SideNavBarComponent } from './components/common-components/sideNavBar/sideNavBar.componet';
+import { TopNavBarComponent } from './components/common-components/topNavBar/topNavBar.component';
+import { LoginComponent } from './components/home/login/login.component';
+import { AssignmentComponent } from './components/dashboard-components/assignment/assignment.component';
+import { SyllabusComponent } from './components/syllabus/syllabus.component';
+import { GradesComponent } from './components/dashboard-components/grades/grades.component';
+import { ChatsComponent } from './components/dashboard-components/chats/chats.component';
+import { AccountComponent } from './components/dashboard-components/accounts/accounts.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
-        TopNavBarComponent,
-        SideNavBarComponent,
-        DashboardComponent,
-        AnnouncementComponent,
-        ScheduleComponent,
-        AssignmentComponent,
-        SyllabusComponent,
-        GradesComponent,
-        AccountComponent,
-        ChatsComponent,
-        ChatsComponent,
     ],
     imports: [
         BrowserModule,
