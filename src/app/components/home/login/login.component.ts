@@ -19,22 +19,17 @@ export class LoginComponent implements OnInit {
 
 
 
-
-
-
     constructor(private authService: AuthService, private toastr: ToastrService, private storeStateService: StoreStateService, private router: Router) { }
 
     ngOnInit(): void {
 
-      
+        if (this.authService.isUserLoggedIn$) {
+            this.router.navigate(['./dashboard/home']);
+        }
 
     }
 
     handleLoginRequest() {
-        console.log('hello')
-        console.log(this.schoolId)
-        console.log(this.userId)
-        console.log(this.password)
 
         const loginCredentials: ILoginRequest = {
             userId: this.userId,
@@ -63,7 +58,7 @@ export class LoginComponent implements OnInit {
                     }
 
                     this.storeStateService.setUserDataToLocalStorage(userData);
-                    this.router.navigate(['./dashboard']);
+                    this.router.navigate(['./dashboard/home']);
 
                     // console.log(res, 123456);
 
