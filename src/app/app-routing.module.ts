@@ -6,13 +6,13 @@ import { LoginComponent } from './components/home/login/login.component';
 
 const routes: Routes = [
     {
-        path: '',
-        component: LoginComponent
-    },
-    {
         path: 'dashboard',
         loadChildren: () => import('./components/dashboard-components/dashboard.module').then(m => m.DashboardModule),
         canLoad: [LoginGuard]
+    },
+    {
+        path: '',
+        component: LoginComponent
     },
 ];
 

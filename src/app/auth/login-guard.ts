@@ -15,74 +15,46 @@ export class LoginGuard implements CanActivate, CanLoad {
         private storeStateService: StoreStateService, private authService: AuthService) { }
 
     canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        console.log('canLOad calling');
+        console.log('Loaded');
 
-        if (String(localStorage.getItem("email")) && String(localStorage.getItem("jwtToken")) && String(localStorage.getItem("classId"))) {
-
-            console.log('canLOad')
+        if (localStorage.getItem('classId')) {
             this.authService.userLoggedIn();
             return true;
 
         } else {
 
-            console.log('no canLOad')
-            // this.loginService.userLoggedOut();  logging out
-            // this.storeStateService.clearState(); clearing local storage
-
-            //set User Logged Out to true; 
             this.authService.userLoggedOut();
             this.storeStateService.clearLocalStorage();
 
-            console.log('Clearing Local Storage');
             localStorage.clear();
-
 
             let url = '';
             segments.forEach((segment: UrlSegment) => {
                 url += segment.path + '/'
             })
 
-
-            // navigating to login page
-            this.router.navigate([`/`], { queryParams: { source: url } });
+            this.router.navigate([``]);
             return false;
-
-
         }
 
     }
 
 
-
-
-
-
-
-
     canActivate(route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-        console.log('Activating');
+            console.log('Activate');
 
-        if (String(localStorage.getItem("email")) && String(localStorage.getItem("jwtToken")) && String(localStorage.getItem("classId"))) {
-
-            console.log('versipmkjsndkjskj');
+        if (!this.storeStateService.classId$.value) {
 
             this.authService.userLoggedIn();
             return true;
 
         } else {
-            console.log('not csjb');
 
-
-            // this.loginService.userLoggedOut();  logging out
-            // this.storeStateService.clearState(); clearing local storage
-
-            //set User Logged Out to true; 
             this.authService.userLoggedOut();
             this.storeStateService.clearLocalStorage();
 
-            console.log('Clearing Local Storage');
             localStorage.clear();
 
 
@@ -92,8 +64,7 @@ export class LoginGuard implements CanActivate, CanLoad {
             })
 
 
-            // navigating to login page
-            this.router.navigate([`/`], { queryParams: { source: url } });
+            this.router.navigate([``], { queryParams: { source: url } });
             return false;
 
 
