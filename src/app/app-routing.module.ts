@@ -1,42 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccountComponent } from './components/accounts/accounts.component';
-import { AssignmentComponent } from './components/assignment/assignment.component';
-import { ChatsComponent } from './components/chats/chats.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { GradesComponent } from './components/grades/grades.component';
-import { LoginComponent } from './components/login/login.component';
-import { SyllabusComponent } from './components/syllabus/syllabus.component';
+import { LoginGuard } from './auth/login-guard';
+import { LoginComponent } from './components/home/login/login.component';
 
 
 const routes: Routes = [
     {
+        path: 'dashboard',
+        loadChildren: () => import('./components/dashboard-components/dashboard.module').then(m => m.DashboardModule),
+        canLoad: [LoginGuard]
+    },
+    {
         path: '',
         component: LoginComponent
-    },
-    {
-        path: 'dashboard',
-        component: DashboardComponent
-    },
-    {
-        path: 'assignment',
-        component: AssignmentComponent
-    },
-    {
-        path: 'syllabus',
-        component: SyllabusComponent
-    },
-    {
-        path: 'grades',
-        component: GradesComponent
-    },
-    {
-        path: 'account',
-        component: AccountComponent
-    },
-    {
-        path: 'chat',
-        component: ChatsComponent
     },
 ];
 

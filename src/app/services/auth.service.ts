@@ -16,7 +16,11 @@ export class AuthService {
 
     private authLoginUrl = environment.authLogin;
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) { 
+
+        console.log(this.isUserLoggedIn$);
+
+    }
 
     // getOrders(): Observable<any> {
     //     return this.httpClient.get(this.getOrdersUrl,
@@ -49,6 +53,7 @@ export class AuthService {
     }
 
     userLoggedOut() {
+        console.log('logging out')
         this.isUserLoggedIn$$.next(false);
     }
 

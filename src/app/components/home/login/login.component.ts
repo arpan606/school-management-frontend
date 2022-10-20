@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ILoginRequest, IUserData } from '../../interface/auth.interface';
-import { AuthService } from '../../services/auth.service';
+import { ILoginRequest, IUserData } from '../../../interface/auth.interface';
+import { AuthService } from '../../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
-import { StoreStateService } from '../../services/store-state.service';
+import { StoreStateService } from '../../../services/store-state.service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -21,9 +22,11 @@ export class LoginComponent implements OnInit {
 
 
 
-    constructor(private authService: AuthService, private toastr: ToastrService, private storeStateService: StoreStateService) { }
+    constructor(private authService: AuthService, private toastr: ToastrService, private storeStateService: StoreStateService, private router: Router) { }
 
     ngOnInit(): void {
+
+      
 
     }
 
@@ -60,6 +63,7 @@ export class LoginComponent implements OnInit {
                     }
 
                     this.storeStateService.setUserDataToLocalStorage(userData);
+                    this.router.navigate(['./dashboard']);
 
                     // console.log(res, 123456);
 

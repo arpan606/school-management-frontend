@@ -9,7 +9,9 @@ import { ChartConfiguration } from 'chart.js';
 })
 export class DashboardComponent implements OnInit {
 
-    constructor() { }
+    constructor() {
+        console.log('Module Loaded')
+     }
 
     ngOnInit(): void {
 

@@ -9,27 +9,54 @@ import { StoreStateService } from '../services/store-state.service';
 @Injectable({
     providedIn: 'root'
 })
-export class LoginGuard implements CanActivate {
+export class LoginGuard implements CanActivate, CanLoad {
 
     constructor(private router: Router,
         private storeStateService: StoreStateService, private authService: AuthService) { }
 
-    canActivate(route: ActivatedRouteSnapshot,
-        state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+        console.log('Loaded');
 
-        console.log('Activating');
+        if (localStorage.getItem('classId')) {
+            this.authService.userLoggedIn();
+            return true;
 
-        if (!String(localStorage.getItem("email")) || !String(localStorage.getItem("jwtToken")) || !String(localStorage.getItem("classId"))) {
-            // this.loginService.userLoggedOut();  logging out
-            // this.storeStateService.clearState(); clearing local storage
+        } else {
 
-            //set User Logged Out to true; 
             this.authService.userLoggedOut();
             this.storeStateService.clearLocalStorage();
 
-            console.log('Clearing Local Storage');
             localStorage.clear();
-            
+
+            let url = '';
+            segments.forEach((segment: UrlSegment) => {
+                url += segment.path + '/'
+            })
+
+            this.router.navigate([``]);
+            return false;
+        }
+
+    }
+
+
+    canActivate(route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+
+            console.log('Activate');
+
+        if (!this.storeStateService.classId$.value) {
+
+            this.authService.userLoggedIn();
+            return true;
+
+        } else {
+
+            this.authService.userLoggedOut();
+            this.storeStateService.clearLocalStorage();
+
+            localStorage.clear();
+
 
             let url = '';
             route.url.forEach((segment: UrlSegment) => {
@@ -37,13 +64,17 @@ export class LoginGuard implements CanActivate {
             })
 
 
-            // navigating to login page
-            this.router.navigate([`/`], { queryParams: { source: url } });
+            this.router.navigate([``], { queryParams: { source: url } });
             return false;
+
+
         }
 
-        return true;
+        return false;
     }
+
+
+
 
 
 }
