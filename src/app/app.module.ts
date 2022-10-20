@@ -9,6 +9,7 @@ import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/home/login/login.component';
 import { LoginGuard } from './auth/login-guard';
+import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 
 
 
@@ -38,6 +39,11 @@ import { LoginGuard } from './auth/login-guard';
     ],
     providers: [
         LoginGuard,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthTokenInterceptor,
+            multi: true
+        }
     ],
     bootstrap: [AppComponent],
 })
