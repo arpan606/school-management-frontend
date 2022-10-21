@@ -138,6 +138,9 @@
 
 }
 
+a{
+    all:unset;
+}
 
 @media screen and (max-width:$desktop-avg) {
 

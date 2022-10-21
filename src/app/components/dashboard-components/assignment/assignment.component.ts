@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IPendingAssigment } from '../../../interface/assignment.interface';
 import { AssignmentService } from '../../../services/assignment.service';
 
 @Component({
@@ -8,7 +9,13 @@ import { AssignmentService } from '../../../services/assignment.service';
 })
 export class AssignmentComponent implements OnInit {
 
+
+    pendingAssignmentArray: IPendingAssigment[] = [];
+
+
     constructor(private assignmentService: AssignmentService) { }
+
+
 
     ngOnInit(): void {
 
@@ -26,8 +33,6 @@ export class AssignmentComponent implements OnInit {
                 if (res.status == "SUCCESS") {
 
                     console.log(res);
-                    // this.customer = customerDetails;
-                    // this.toastr.success(TOASTR_MSG.VALID_CUSTOMER, TOASTR_TITLE.SUCCESS);
 
                 }
                 else {
@@ -50,9 +55,23 @@ export class AssignmentComponent implements OnInit {
 
                 if (res.status == "SUCCESS") {
 
-                    console.log(res);
-                    // this.customer = customerDetails;
-                    // this.toastr.success(TOASTR_MSG.VALID_CUSTOMER, TOASTR_TITLE.SUCCESS);
+                    for (let i = 0; i < res.data.length; i += 1) {
+
+                        //converting timestamp to date
+                        let { submissionDate } = res.data[i];
+                        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                        var lastDate = new Date(submissionDate);
+
+                   
+                        let assignment: IPendingAssigment = {
+                            pdfLink: res.data[i].pdfLink,
+                            submissionDate: lastDate.toString(),
+                            title: res.data[i].title,
+                            totalMarks: res.data[i].totalMarks,
+                        }
+
+                        this.pendingAssignmentArray.push(assignment);
+                    }
 
                 }
                 else {
@@ -76,8 +95,8 @@ export class AssignmentComponent implements OnInit {
                 if (res.status == "SUCCESS") {
 
                     console.log(res);
-                    // this.customer = customerDetails;
-                    // this.toastr.success(TOASTR_MSG.VALID_CUSTOMER, TOASTR_TITLE.SUCCESS);
+
+
 
                 }
                 else {
