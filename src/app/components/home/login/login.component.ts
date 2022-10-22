@@ -33,10 +33,7 @@ export class LoginComponent implements OnInit {
     }
 
     handleLoginRequest() {
-        console.log('hello')
-        console.log(this.schoolId)
-        console.log(this.userId)
-        console.log(this.password)
+      
 
         const loginCredentials: ILoginRequest = {
             userId: this.userId,
@@ -44,11 +41,9 @@ export class LoginComponent implements OnInit {
             schoolId: this.schoolId
         };
 
-        console.log(loginCredentials, 113);
 
         this.authService.login(loginCredentials).subscribe({
             next: (res) => {
-                console.log(res);
 
                 if (res.status == "SUCCESS") {
                     this.toastr.success('SUCCESS', 'LOGIN SUCCESSFULL');
@@ -65,12 +60,10 @@ export class LoginComponent implements OnInit {
                         studentId:loginCredentials.userId
                     }
 
-                    console.log(userData.studentId)
 
                     this.storeStateService.setUserDataToLocalStorage(userData);
                     this.router.navigate(['./dashboard/home']);
 
-                    // console.log(res, 123456);
 
                 }
                 else if (res.status == "FAILURE") {

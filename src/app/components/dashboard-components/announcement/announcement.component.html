@@ -4,45 +4,10 @@
         <!-- <CampaignIcon /> -->
     </div>
     <div class="announcement-body-container">
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard , photograph, tiffin,fee slip and previous id card</div>
+        <div class="sub-container" *ngFor="let circular of announcementArray" (click)="navigateToCircular(circular.link)">
+            
+            <div class="title">{{circular.title}} </div>
         </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard ,slip and previous id card First day of school , please bring icard , photograph, tiffin,fee slip and previous id card First day of school</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard , photograph, tiffin,fee slip and previous id card</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard ,slip and previous id card First day of school , please bring icard , photograph, tiffin,fee slip and previous id card First day of school</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard , photograph, tiffin,fee slip and previous id card</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard ,slip and previous id card First day of school , please bring icard , photograph, tiffin,fee slip and previous id card First day of school</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard , photograph, tiffin,fee slip and previous id card</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard ,slip and previous id card First day of school , please bring icard , photograph, tiffin,fee slip and previous id card First day of school</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard , photograph, tiffin,fee slip and previous id card</div>
-        </div>
-        <div class="sub-container">
-            <div class="image-container"><img src="" alt="" /> </div>
-            <div class="title">First day of school , please bring icard ,slip and previous id card First day of school , please bring icard , photograph, tiffin,fee slip and previous id card First day of school</div>
-        </div>
+       
     </div>
 </div>

@@ -36,35 +36,24 @@
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-
         overflow-y: scroll;
 
 
 
         .sub-container {
             width: 100%;
-            min-height: 200px;
-            max-height: 400px;
+            min-height: 50px;
+            max-height: 70px;
             margin-bottom: 20px;
             box-sizing: border-box;
-            border: 0.5px solid #e3dbdb;
-            border-radius: 5px;
+            border: 2px solid #fcf8f8;
+            border-radius: 0px;
             text-align: left;
             padding: 12px 5px;
             font-weight: 300;
             font-size: 15px;
             color: #3e2a2a;
             padding: 15px;
-
-
-            .image-container {
-                height: 150px;
-                width: 100%;
-                background-color: white;
-                //  border:1px solid blue;
-                margin-bottom: 10px;
-                border-radius: 5px;
-            }
 
             .title {
                 width: 100%;
@@ -80,7 +69,7 @@
 }
 
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:$desktop-avg-max) {
 
     .announcement-container {
 

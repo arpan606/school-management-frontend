@@ -18,18 +18,7 @@ export class AuthService {
 
     constructor(private httpClient: HttpClient) { 
 
-        console.log(this.isUserLoggedIn$);
-
     }
-
-    // getOrders(): Observable<any> {
-    //     return this.httpClient.get(this.getOrdersUrl,
-    //         {
-    //             params: { shopifyId: String(this.storeStateService.shopifyIdState$?.value) },
-    //             headers: backendHeaders
-    //         }
-    //     );
-    // }
 
 
     login(loginCredentials: ILoginRequest): Observable<any> {
@@ -53,7 +42,6 @@ export class AuthService {
     }
 
     userLoggedOut() {
-        console.log('logging out')
         this.isUserLoggedIn$$.next(false);
     }
 

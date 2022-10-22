@@ -14,11 +14,9 @@
         top: 10vh;
         left: 16vw;
         width: 62vw;
-        // border: 0.5px solid #787878;
         height: 88vh;
         overflow-y: scroll;
         overflow-x: hidden;
-        // background-color: #f1f1f1;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,6 +46,7 @@
             justify-content: space-around;
             align-items: center;
             width: 100%;
+            margin-bottom: 10%;
 
             .Doughnut-chart {
                 width: 30%;
@@ -74,14 +73,13 @@
 
     .dashboard-container {
 
-
         .dasboard-middle-section {
-          
-            box-sizing: border-box;
-            border:1px solid red;
 
-            .greeting-section {
-            }
+            box-sizing: border-box;
+            left: 11vw;
+            width: 88vw;
+
+            .greeting-section {}
 
             .chart-section {
                 box-sizing: border-box;
@@ -91,17 +89,18 @@
 
 
                 .Doughnut-chart {
-                    width: 60%;
+                    width: 30%;
                     box-sizing: border-box;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     margin-bottom: 20px;
+                    margin-top: 5%;
 
                 }
 
                 .line-chart {
-                    width: 100%;
+                    width: 70%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -118,6 +117,36 @@
     }
 }
 
+@media screen and (max-width:$tablet-max) {
+
+    .dashboard-container {
+
+        .dasboard-middle-section {
+
+            .greeting-section {}
+
+            .chart-section {
+             
+
+                .Doughnut-chart {
+                    width: 50%;
+                  
+
+                }
+
+                .line-chart {
+                    width: 90%;
+                   
+
+                }
+            }
+
+        }
+
+
+
+    }
+}
 
 @media screen and (max-width:$mobile-max) {
 
@@ -131,37 +160,19 @@
             height: auto;
             box-sizing: border-box;
 
-            .greeting-section {
-            }
 
             .chart-section {
-                box-sizing: border-box;
-                flex-direction: column;
-                height: auto;
-                box-sizing: border-box;
-
+              
 
                 .Doughnut-chart {
-                    width: 100%;
-                    box-sizing: border-box;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 20px;
-
+                    width: 60%;
                 }
 
                 .line-chart {
                     width: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin-bottom: 20px;
-
                 }
             }
 
-            .schedule-section {}
         }
 
 
