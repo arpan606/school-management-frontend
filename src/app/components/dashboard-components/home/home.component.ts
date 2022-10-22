@@ -34,8 +34,8 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.fetchUserMarks();
-        // this.fetchUserAttendance();
+        this.fetchUserMarks();
+        this.fetchUserAttendance();
     }
 
 
@@ -151,7 +151,6 @@ export class HomeComponent implements OnInit {
                        
 
                     }
-                    console.log(this.userMarksArray);
 
                     this.buildBarChart();
 

@@ -47,7 +47,6 @@ export class StoreStateService {
 
     setUserDataToLocalStorage(userData: IUserData) {
         this.setUserData(userData);
-        console.log(userData.birthDate);
         localStorage.setItem("firstName", userData.firstName);
         localStorage.setItem("lastName", userData.lastName);
         localStorage.setItem("birthDate", String(userData.birthDate));

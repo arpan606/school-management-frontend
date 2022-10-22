@@ -15,7 +15,6 @@ export class LoginGuard implements CanActivate, CanLoad {
         private storeStateService: StoreStateService, private authService: AuthService) { }
 
     canLoad(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        console.log('Loaded');
 
         if (localStorage.getItem('classId')) {
             this.authService.userLoggedIn();
@@ -43,7 +42,6 @@ export class LoginGuard implements CanActivate, CanLoad {
     canActivate(route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-            console.log('Activate');
 
         if (!this.storeStateService.classId$.value) {
 

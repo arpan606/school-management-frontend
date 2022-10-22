@@ -18,7 +18,6 @@ export class ChatsComponent implements OnInit {
     }
 
     toggleChatContainer() {
-        console.log('hello');
         this.openChatContainer = true;
     }
 

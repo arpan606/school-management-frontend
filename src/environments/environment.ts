@@ -12,7 +12,8 @@ export const environment = {
     authLogin: schoolManagementServerUrl + 'auth/login',
     userMarks:schoolManagementServerUrl+'marks/get',
     userMarksPercentage:schoolManagementServerUrl+'marks/performance-percentage',
-    userAttendance:schoolManagementServerUrl+'attendance/get'
+    userAttendance:schoolManagementServerUrl+'attendance/get',
+    schoolCircular:schoolManagementServerUrl+'circular/get'
 };
 
 
