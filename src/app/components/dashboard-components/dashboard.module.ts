@@ -13,7 +13,7 @@ import { AnnouncementComponent } from "./announcement/announcement.component";
 import { AssignmentComponent } from "./assignment/assignment.component";
 import { ChatsComponent } from "./chats/chats.component";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { HomeComponent } from "./home/home.component";
 import { GradesComponent } from "./grades/grades.component";
 import { ScheduleComponent } from "./schedule/schedule.component";
 
@@ -21,7 +21,7 @@ import { ScheduleComponent } from "./schedule/schedule.component";
     declarations: [
         TopNavBarComponent,
         SideNavBarComponent,
-        DashboardComponent,
+        HomeComponent,
         AnnouncementComponent,
         ScheduleComponent,
         AssignmentComponent,

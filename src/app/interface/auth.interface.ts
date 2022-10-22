@@ -12,5 +12,6 @@ export interface IUserData {
     email: string,
     classId: string,
     profilePicture: string,
-    jwtToken: string
+    jwtToken: string,
+    studentId: string
 }

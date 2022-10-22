@@ -54,7 +54,7 @@
             }
 
             .line-chart {
-                width: 45%;
+                width: 60%;
             }
         }
 
@@ -67,6 +67,55 @@
         display: none;
     }
 
+}
+
+
+@media screen and (max-width:$desktop-avg-max) {
+
+    .dashboard-container {
+
+
+        .dasboard-middle-section {
+          
+            box-sizing: border-box;
+            border:1px solid red;
+
+            .greeting-section {
+            }
+
+            .chart-section {
+                box-sizing: border-box;
+                flex-direction: column;
+                height: auto;
+                box-sizing: border-box;
+
+
+                .Doughnut-chart {
+                    width: 60%;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                }
+
+                .line-chart {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                }
+            }
+
+            .schedule-section {}
+        }
+
+
+
+    }
 }
 
 
