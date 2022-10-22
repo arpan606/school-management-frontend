@@ -10,10 +10,11 @@ const schoolManagementServerUrl: string = 'http://localhost:5000/'
 export const environment = {
     production: false,
     authLogin: schoolManagementServerUrl + 'auth/login',
-    userMarks:schoolManagementServerUrl+'marks/get',
-    userMarksPercentage:schoolManagementServerUrl+'marks/performance-percentage',
-    userAttendance:schoolManagementServerUrl+'attendance/get',
-    schoolCircular:schoolManagementServerUrl+'circular/get'
+    userMarks: schoolManagementServerUrl + 'marks/get',
+    userMarksPercentage: schoolManagementServerUrl + 'marks/performance-percentage',
+    userAttendance: schoolManagementServerUrl + 'attendance/get',
+    schoolCircular: schoolManagementServerUrl + 'circular/get',
+    schoolClassSyllabus: schoolManagementServerUrl + 'syllabus/get'
 };
 
 
