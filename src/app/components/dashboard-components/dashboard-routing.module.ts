@@ -4,15 +4,15 @@ import { SyllabusComponent } from '../syllabus/syllabus.component';
 import { AccountComponent } from './accounts/accounts.component';
 import { AssignmentComponent } from './assignment/assignment.component';
 import { ChatsComponent } from './chats/chats.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { GradesComponent } from './grades/grades.component';
+import { HomeComponent } from './home/home.component';
 
 
 
 const routes: Routes = [
     {
         path: 'home',
-        component: DashboardComponent,
+        component: HomeComponent,
     },
     {
         path: 'assignment',

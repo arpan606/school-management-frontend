@@ -26,7 +26,9 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {
 
-      
+        if (this.authService.isUserLoggedIn$) {
+            this.router.navigate(['./dashboard/home']);
+        }
 
     }
 
@@ -59,11 +61,14 @@ export class LoginComponent implements OnInit {
                         email: res.data.email,
                         classId: res.data.classId,
                         profilePicture: res.data.imageLink,
-                        jwtToken: res.data.token
+                        jwtToken: res.data.token,
+                        studentId:loginCredentials.userId
                     }
 
+                    console.log(userData.studentId)
+
                     this.storeStateService.setUserDataToLocalStorage(userData);
-                    this.router.navigate(['./dashboard']);
+                    this.router.navigate(['./dashboard/home']);
 
                     // console.log(res, 123456);
 
