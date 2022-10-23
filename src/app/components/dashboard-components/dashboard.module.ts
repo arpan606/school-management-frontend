@@ -16,6 +16,7 @@ import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { HomeComponent } from "./home/home.component";
 import { GradesComponent } from "./grades/grades.component";
 import { ScheduleComponent } from "./schedule/schedule.component";
+import { TimeTableComponent } from "./time-table/time-table.component";
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { ScheduleComponent } from "./schedule/schedule.component";
         GradesComponent,
         AccountComponent,
         ChatsComponent,
+        TimeTableComponent
     ],
     imports: [
         DashboardRoutingModule,

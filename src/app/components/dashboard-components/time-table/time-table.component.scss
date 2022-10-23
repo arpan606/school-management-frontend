@@ -1,0 +1,123 @@
+@import "../../../../assets/scss/screen-size.scss";
+
+
+.time-table-container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid green;
+
+    .time-table-section {
+        position: absolute;
+        top: 10vh;
+        left: 16vw;
+        width: 83vw;
+        height: 88vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 1px solid red;
+
+
+        .heading {
+            width: 100%;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .main-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            border: 1px solid yellow;
+
+
+
+            .sub-heading {
+                width: 100%;
+                text-align: left;
+
+            }
+
+            .subcontainer {
+                display: flex;
+                width: 100%;
+                box-sizing: border-box;
+                height: auto;
+                padding: 25px;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                flex-wrap: wrap;
+
+
+
+
+            }
+        }
+
+
+    }
+
+}
+
+a {
+    all: unset;
+}
+
+@media screen and (max-width:$desktop-avg) {
+
+    .time-table-container {
+
+        .time-table-section {
+            left: 11vw;
+            width: 88vw;
+            padding: 5px;
+
+            .main-container {
+
+                .subcontainer {
+                    padding: 10px;
+
+
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:$mobile-max) {
+
+    .time-table-container {
+
+
+        .time-table-section {
+
+            left: 0;
+            width: 98%;
+            right: 0;
+            margin: auto;
+
+            .main-container {
+
+
+                .subcontainer {}
+            }
+
+
+        }
+
+    }
+
+}

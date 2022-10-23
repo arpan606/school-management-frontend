@@ -14,7 +14,10 @@ export const environment = {
     userMarksPercentage: schoolManagementServerUrl + 'marks/performance-percentage',
     userAttendance: schoolManagementServerUrl + 'attendance/get',
     schoolCircular: schoolManagementServerUrl + 'circular/get',
-    schoolClassSyllabus: schoolManagementServerUrl + 'syllabus/get'
+    schoolClassSyllabus: schoolManagementServerUrl + 'syllabus/get',
+    classTimeTable: schoolManagementServerUrl + 'time-table/get',
+    classTodayTimeTable: schoolManagementServerUrl + 'time-table/get-today',
+
 };
 
 
