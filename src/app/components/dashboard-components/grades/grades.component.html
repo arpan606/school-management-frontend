@@ -5,165 +5,69 @@
         <div class="heading">
             <h2>Grades</h2>
         </div>
-        <div class="main-section">
+        <div class="main-section" *ngFor="let marks of userMarksArray">
             <div class="heading">
-                <h2>Semester 1</h2>
+                <h2>{{marks.subjectName}}</h2>
             </div>
             <div class="table-headers">
                 <div class="headers">Subject</div>
-                <div class="headers">Date</div>
                 <div class="headers">Marks Obtained</div>
                 <div class="headers">Total Marks</div>
-                <div class="headers">Status</div>
-                <div class="headers">Grade</div>
             </div>
             <div class="grades-box">
                 <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
+                    <div class="grades-column">UT1</div>
+                    <div class="grades-column">{{marks.UT1}}</div>
+                    <div class="grades-column">{{paperTotalMarks.UT1}}</div>
                 </div>
             </div>
             <div class="grades-box">
                 <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
+                    <div class="grades-column">UT2</div>
+                    <div class="grades-column">{{marks.UT2}}</div>
+                    <div class="grades-column">{{paperTotalMarks.UT2}}</div>
                 </div>
             </div>
             <div class="grades-box">
                 <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
+                    <div class="grades-column">UT3</div>
+                    <div class="grades-column">{{marks.UT3}}</div>
+                    <div class="grades-column">{{paperTotalMarks.UT3}}</div>
                 </div>
             </div>
             <div class="grades-box">
                 <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
+                    <div class="grades-column">UT4</div>
+                    <div class="grades-column">{{marks.UT4}}</div>
+                    <div class="grades-column">{{paperTotalMarks.UT4}}</div>
                 </div>
             </div>
+            <div class="grades-box">
+                <div class="grades-sub-box">
+                    <div class="grades-column">Midterm</div>
+                    <div class="grades-column">{{marks.Midterm}}</div>
+                    <div class="grades-column">{{paperTotalMarks.Midterm}}</div>
+                </div>
+            </div>
+
+            <div class="grades-box">
+                <div class="grades-sub-box">
+                    <div class="grades-column">Preboard1</div>
+                    <div class="grades-column">{{marks.Preboard1}}</div>
+                    <div class="grades-column">{{paperTotalMarks.Preboard1}}</div>
+                </div>
+            </div>
+
+            <div class="grades-box">
+                <div class="grades-sub-box">
+                    <div class="grades-column">Preboard2</div>
+                    <div class="grades-column">{{marks.Preboard2}}</div>
+                    <div class="grades-column">{{paperTotalMarks.Preboard2}}</div>
+                </div>
+            </div>
+
         </div>
-        <div class="main-section">
-            <div class="heading">
-                <h2>Semester 1</h2>
-            </div>
-            <div class="table-headers">
-                <div class="headers">Subject</div>
-                <div class="headers">Date</div>
-                <div class="headers">Marks Obtained</div>
-                <div class="headers">Total Marks</div>
-                <div class="headers">Status</div>
-                <div class="headers">Grade</div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-        </div>
-        <div class="main-section">
-            <div class="heading">
-                <h2>Semester 1</h2>
-            </div>
-            <div class="table-headers">
-                <div class="headers">Subject</div>
-                <div class="headers">Date</div>
-                <div class="headers">Marks Obtained</div>
-                <div class="headers">Total Marks</div>
-                <div class="headers">Status</div>
-                <div class="headers">Grade</div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-            <div class="grades-box">
-                <div class="grades-sub-box">
-                   <div class="grades-column">COA</div>
-                   <div class="grades-column">24/7/2020</div>
-                   <div class="grades-column">85</div>
-                   <div class="grades-column">100</div>
-                   <div class="grades-column  status">Pass</div>
-                   <div class="grades-column">A+</div>
-                </div>
-            </div>
-        </div>
+
 
     </div>
 </div>
