@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/home/login/login.component';
 import { LoginGuard } from './auth/login-guard';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
+import { Page404Component } from './components/home/page404/page404.component';
 
 
 
@@ -17,6 +18,7 @@ import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
     declarations: [
         AppComponent,
         LoginComponent,
+        Page404Component
     ],
     imports: [
         BrowserModule,

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginGuard } from './auth/login-guard';
 import { LoginComponent } from './components/home/login/login.component';
+import { Page404Component } from './components/home/page404/page404.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,15 @@ const routes: Routes = [
         path: '',
         component: LoginComponent
     },
+    {
+        path: '404',
+        component: Page404Component
+    },
+    {
+        path: '**',
+        redirectTo: '/404',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({
