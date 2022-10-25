@@ -13,15 +13,16 @@ import { AnnouncementComponent } from "./announcement/announcement.component";
 import { AssignmentComponent } from "./assignment/assignment.component";
 import { ChatsComponent } from "./chats/chats.component";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { HomeComponent } from "./home/home.component";
 import { GradesComponent } from "./grades/grades.component";
 import { ScheduleComponent } from "./schedule/schedule.component";
+import { TimeTableComponent } from "./time-table/time-table.component";
 
 @NgModule({
     declarations: [
         TopNavBarComponent,
         SideNavBarComponent,
-        DashboardComponent,
+        HomeComponent,
         AnnouncementComponent,
         ScheduleComponent,
         AssignmentComponent,
@@ -29,6 +30,7 @@ import { ScheduleComponent } from "./schedule/schedule.component";
         GradesComponent,
         AccountComponent,
         ChatsComponent,
+        TimeTableComponent
     ],
     imports: [
         DashboardRoutingModule,

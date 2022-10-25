@@ -60,7 +60,16 @@
                     border-radius: 100%;
                     width: 35px;
                     height: 35px;
-                    background-color: yellow;
+                    border-radius: 100%;
+                    box-sizing: border-box;
+
+                    img {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 100%;
+
+
+                    }
                 }
             }
 

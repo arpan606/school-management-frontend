@@ -7,25 +7,31 @@
         </div>
         <div class="account-setting">
             <div class="profile-picture">
-                <div class="picture"></div>
+                <div class="picture">
+                    <img [src]="profilePictureLink" alt="">
+                </div>
             </div>
 
             <div class="student-details">
                 <div class="detail">
                     <div class="headers">Student Name</div>
-                    <div class="value">Arpan Singhal</div>
+                    <div class="value">{{firstName}} {{lastName}}</div>
                 </div>
                 <div class="detail">
-                    <div class="headers">Registration Id</div>
-                    <div class="value">C4569</div>
+                    <div class="headers">User Id</div>
+                    <div class="value">{{userId}}</div>
                 </div>
                 <div class="detail">
                     <div class="headers">Email Address</div>
-                    <div class="value">jwshhd@gamil.com</div>
+                    <div class="value">{{email}}</div>
                 </div>
                 <div class="detail">
                     <div class="headers">Mobile Number</div>
-                    <div class="value">8942158555</div>
+                    <div class="value">{{phoneNumber}}</div>
+                </div>
+                <div class="detail">
+                    <div class="headers">Class Id</div>
+                    <div class="value">{{classId}}</div>
                 </div>
             </div>
         </div>

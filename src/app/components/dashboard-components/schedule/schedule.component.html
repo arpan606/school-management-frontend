@@ -7,60 +7,55 @@
     </div>
     <div class="schdedule-table-section">
         <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
+            <div id="time-column"> <span>8:00am</span> </div>
+            <div>{{todayTimeTable?.firstPeriod?.subject}}</div>
             <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
+                <div class="faculty-image">
+                    <img [src]="todayTimeTable?.firstPeriod?.teacherImgLink" alt="">
+                </div>
+                <span>{{todayTimeTable?.firstPeriod?.teacherName}}</span>
             </div>
         </div>
         <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
+            <div id="time-column"> <span>9:00am</span> </div>
+            <div>{{todayTimeTable?.secondPeriod?.subject}}</div>
             <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
+                <div class="faculty-image">
+                    <img [src]="todayTimeTable?.secondPeriod?.teacherImgLink" alt="">
+                </div>
+                <span>{{todayTimeTable?.secondPeriod?.teacherName}}</span>
             </div>
         </div>
         <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
+            <div id="time-column"> <span>10:00am</span> </div>
+            <div>{{todayTimeTable?.thirdPeriod?.subject}}</div>
             <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
+                <div class="faculty-image">
+                    <img [src]="todayTimeTable?.thirdPeriod?.teacherImgLink" alt="">
+                </div>
+                <span>{{todayTimeTable?.thirdPeriod?.teacherName}}</span>
             </div>
         </div>
         <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
+            <div id="time-column"> <span>11:30am</span> </div>
+            <div>{{todayTimeTable?.fourthPeriod?.subject}}</div>
             <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
+                <div class="faculty-image">
+                    <img [src]="todayTimeTable?.fourthPeriod?.teacherImgLink" alt="">
+                </div>
+                <span>{{todayTimeTable?.fourthPeriod?.teacherName}}</span>
             </div>
         </div>
         <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
+            <div id="time-column"> <span>12:30pm</span> </div>
+            <div>{{todayTimeTable?.fifthPeriod?.subject}}</div>
             <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
+                <div class="faculty-image">
+                    <img [src]="todayTimeTable?.fifthPeriod?.teacherImgLink" alt="">
+                </div>
+                <span>{{todayTimeTable?.fifthPeriod?.teacherName}}</span>
             </div>
         </div>
-        <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
-            <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
-            </div>
-        </div>
-        <div class="schedule-table-rows">
-            <div id="time-column">  <span>10:30pm</span> </div>
-            <div >Computer Organization</div>
-            <div id="faculty-column">
-                <div class="faculty-image"></div>
-                <span>Mr Gopi Chand</span>
-            </div>
-        </div>
+
     </div>
-</div >
+</div>

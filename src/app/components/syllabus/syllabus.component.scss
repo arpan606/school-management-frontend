@@ -26,6 +26,7 @@
         .heading {
             width: 100%;
             text-align: left;
+            text-transform: uppercase;
         }
 
         .main-container {
@@ -81,6 +82,7 @@
                         padding: 15px;
                         color: #ffffff;
                         text-align: center;
+                        cursor: pointer;
                     }
 
 
@@ -95,6 +97,9 @@
 
 }
 
+a{
+    all:unset;
+}
 
 @media screen and (max-width:$desktop-avg) {
 

@@ -1,6 +1,10 @@
 <div class="topNavBar-container">
     <div class="topNavBar-icons">
-        <div class="user-profile-icon"></div>
-        <div><mat-icon>notification_important</mat-icon></div>
+        <div class="user-profile-icon">
+            <img [src]="profileImage" alt="">
+        </div>
+        <div (click)="logoutUser()">
+            <mat-icon>power_settings_new</mat-icon>
+        </div>
     </div>
 </div>

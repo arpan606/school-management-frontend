@@ -47,6 +47,12 @@
                     aspect-ratio: 1;
                     border-radius: 100%;
                     background-color: aliceblue;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100%;
+                    }
                 }
 
 
@@ -67,15 +73,16 @@
                     padding: 8px;
                     margin: 5px 0px;
 
+
                     .headers {
-                        width: 30%;
+                        width: 40%;
                         text-align: left;
                         color: #0096d3;
                         font-weight: 500;
                     }
 
                     .value {
-                        width: 30%;
+                        width: 50%;
                         text-align: left;
 
                     }
@@ -122,6 +129,7 @@
                     width: 100%;
 
                     .detail {
+                        margin-left: 15%;
 
 
                         .headers {
@@ -167,11 +175,12 @@
                 }
 
                 .student-details {
-
                     width: 100%;
+                    box-sizing: content-box;
 
                     .detail {
                         width: 100%;
+                        margin-left: 0%;
 
                         .headers {
                             width: 50%;

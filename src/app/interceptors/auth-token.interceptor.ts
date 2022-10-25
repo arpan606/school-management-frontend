@@ -14,7 +14,6 @@ export class AuthTokenInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
         if (localStorage.getItem('jwtToken')) {
-            console.log(localStorage.getItem('token'))
             request = request.clone({
                 setHeaders: {
                     'x-access-token': String(localStorage.getItem('jwtToken'))

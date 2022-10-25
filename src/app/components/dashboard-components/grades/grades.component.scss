@@ -53,10 +53,15 @@
                 padding: 10px 0px;
 
                 .headers {
-                    width: 17.33%;
+                    width: 30%;
                     text-align: left;
                     padding: 5px;
                     font-weight: bold;
+                    
+                }
+
+                .headers:first-child{
+                    padding-left: 10px;
                 }
             }
 
@@ -68,7 +73,6 @@
                 width: 100%;
                 margin: 20px 0px;
                 padding: 10px 5px;
-                border-radius: 10px;
                 box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
 
@@ -83,9 +87,13 @@
 
 
                     .grades-column {
-                        width: 17.33%;
+                        width: 30%;
                         padding: 8px;
                         text-align: left;
+                    }
+
+                    .grades-column:first-child{
+                        padding-left: 10px;
                     }
 
                     .status {

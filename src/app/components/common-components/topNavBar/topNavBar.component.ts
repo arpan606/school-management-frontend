@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
+import { StoreStateService } from '../../../services/store-state.service';
 
 
 @Component({
@@ -8,12 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavBarComponent implements OnInit {
 
-    constructor() { }
+    profileImage!: string;
+
+    constructor(private authService: AuthService, private storeStateService: StoreStateService) { }
 
     ngOnInit(): void {
-
+        this.profileImage = this.storeStateService.profilePicture$.value;
     }
 
+    logoutUser() {
+        window.location.reload();
+        this.authService.userLoggedOut();
+        localStorage.clear();
+    }
 
 
 }

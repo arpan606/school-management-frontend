@@ -17,6 +17,7 @@ export class StoreStateService {
     public profilePicture$!: BehaviorSubject<string>;
     public email$!: BehaviorSubject<string>;
     public jwtTokenState$!: BehaviorSubject<string>;
+    public studentId$!: BehaviorSubject<string>;
 
 
     constructor(private httpClient: HttpClient) {
@@ -29,6 +30,8 @@ export class StoreStateService {
         let profilePicture = String(localStorage.getItem("profilePicture"));
         let email = String(localStorage.getItem("email"));
         let jwtToken = String(localStorage.getItem("jwtToken"));
+        let studentId = String(localStorage.getItem("studentId"));
+
 
         this.firstName$ = new BehaviorSubject<string>(firstName);
         this.lastName$ = new BehaviorSubject<string>(lastName);
@@ -38,11 +41,12 @@ export class StoreStateService {
         this.profilePicture$ = new BehaviorSubject<string>(profilePicture);
         this.email$ = new BehaviorSubject<string>(email);
         this.jwtTokenState$ = new BehaviorSubject<string>(jwtToken);
+        this.studentId$ = new BehaviorSubject<string>(studentId);
+
     }
 
     setUserDataToLocalStorage(userData: IUserData) {
         this.setUserData(userData);
-        console.log(userData.birthDate);
         localStorage.setItem("firstName", userData.firstName);
         localStorage.setItem("lastName", userData.lastName);
         localStorage.setItem("birthDate", String(userData.birthDate));
@@ -51,6 +55,7 @@ export class StoreStateService {
         localStorage.setItem("classId", userData.classId);
         localStorage.setItem("profilePicture", userData.profilePicture);
         localStorage.setItem("jwtToken", userData.jwtToken);
+        localStorage.setItem("studentId", String(userData.studentId));
     }
 
     setUserData(userData: IUserData) {
@@ -62,6 +67,7 @@ export class StoreStateService {
         this.profilePicture$ = new BehaviorSubject<string>(userData.profilePicture);
         this.email$ = new BehaviorSubject<string>(userData.email);
         this.jwtTokenState$ = new BehaviorSubject<string>(userData.jwtToken);
+        this.studentId$ = new BehaviorSubject<string>(String(userData.studentId));
     }
 
 

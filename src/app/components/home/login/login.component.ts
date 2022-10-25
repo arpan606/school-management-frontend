@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     }
 
     handleLoginRequest() {
+      
 
         const loginCredentials: ILoginRequest = {
             userId: this.userId,
@@ -37,11 +38,9 @@ export class LoginComponent implements OnInit {
             schoolId: this.schoolId
         };
 
-        console.log(loginCredentials, 113);
 
         this.authService.login(loginCredentials).subscribe({
             next: (res) => {
-                console.log(res);
 
                 if (res.status == "SUCCESS") {
                     this.toastr.success('SUCCESS', 'LOGIN SUCCESSFULL');
@@ -54,13 +53,14 @@ export class LoginComponent implements OnInit {
                         email: res.data.email,
                         classId: res.data.classId,
                         profilePicture: res.data.imageLink,
-                        jwtToken: res.data.token
+                        jwtToken: res.data.token,
+                        studentId:loginCredentials.userId
                     }
+
 
                     this.storeStateService.setUserDataToLocalStorage(userData);
                     this.router.navigate(['./dashboard/home']);
 
-                    // console.log(res, 123456);
 
                 }
                 else if (res.status == "FAILURE") {
