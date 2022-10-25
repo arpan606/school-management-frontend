@@ -6,12 +6,60 @@
             <h2>TIME TABLE</h2>
         </div>
         <div class="main-container">
-            <div class="sub-heading">
-                <h2></h2>
+
+            <div class="time-table" *ngFor="let period of timeTableArray">
+                <div class="day"> {{period.day}}</div>
+                <div class="time-table-row">
+                    <div class="column">
+                        <div class="subject">
+                            {{period.firstPeriod}}
+                        </div>
+                        <div class="time-duration">
+                            <div class="start">8:00</div>
+                            <div class="end">9:00</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="subject">
+                            {{period.firstPeriod}}
+                        </div>
+                        <div class="time-duration">
+                            <div class="start">9:00</div>
+                            <div class="end">10:00</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="subject">
+                            {{period.thirdPeriod}}
+                        </div>
+                        <div class="time-duration">
+                            <div class="start">10:00</div>
+                            <div class="end">11:00</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="subject">
+                            {{period.fourthPeriod}}
+                        </div>
+                        <div class="time-duration">
+                            <div class="start">11:30</div>
+                            <div class="end">12:30</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="subject">
+                            {{period.fifthPeriod}}
+                        </div>
+                        <div class="time-duration">
+                            <div class="start">12:30</div>
+                            <div class="end">1:30</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="subcontainer" >
-                
-            </div>        
+
+
+
         </div>
     </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { TimeTable } from '../../../interface/time-table.interface';
+import { TimeTableService } from '../../../services/time-table.service';
 
 @Component({
     selector: 'app-schedules',
@@ -8,12 +10,48 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class ScheduleComponent implements OnInit {
 
-    constructor() { }
+    todayTimeTable!:any;
+
+    constructor(private timeTableService: TimeTableService) { }
+
 
     ngOnInit(): void {
 
+        this.fetchTodayTimeTable();
     }
 
+    fetchTodayTimeTable() {
+        this.timeTableService.getTodayClassTimeTable().subscribe({
+            next: (res) => {
+
+
+                if (res.status.toUpperCase() === "SUCCESS") {
+
+
+                    this.todayTimeTable = {
+                        firstPeriod: res.data.firstPeriod,
+                        secondPeriod: res.data.secondPeriod,
+                        thirdPeriod: res.data.thirdPeriod,
+                        fourthPeriod: res.data.fourthPeriod,
+                        fifthPeriod: res.data.fifthPeriod,
+                        sixthPeriod: res.data.sixthPeriod,
+                        seventhPeriod: res.data.seventhPeriod,
+                        eigthPeriod: res.data.eigthPeriod,
+                    }
+
+                    console.log(this.todayTimeTable);
+
+                }
+                else {
+                    // this.toastr.error("FAILURE", 'INVALID REQUEST');
+                }
+            },
+            error: (error) => {
+                console.error("Error =>", error);
+                // this.toastr.error('ERROR', 'SERVER OFFLINE');
+            }
+        });
+    }
 
 
 }
