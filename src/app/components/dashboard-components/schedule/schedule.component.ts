@@ -43,6 +43,8 @@ export class ScheduleComponent implements OnInit {
 
                 }
                 else {
+
+                    this.todayTimeTable={};
                     // this.toastr.error("FAILURE", 'INVALID REQUEST');
                 }
             },

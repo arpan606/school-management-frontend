@@ -28,7 +28,7 @@ export class TimeTableService {
     }
 
     getTodayClassTimeTable(): Observable<any> {
-        return this.httpClient.get(this.classTimeTableUrl, {
+        return this.httpClient.get(this.classTodayTimeTableUrl, {
             params: {
                 classId:this.storeStateService.classId$.value
             }
