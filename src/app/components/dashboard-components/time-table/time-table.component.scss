@@ -1,0 +1,185 @@
+@import "../../../../assets/scss/screen-size.scss";
+
+
+.time-table-container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+
+    .time-table-section {
+        position: absolute;
+        top: 10vh;
+        left: 16vw;
+        width: 83vw;
+        height: 88vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        box-sizing: border-box;
+
+
+        .heading {
+            width: 100%;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .main-container {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            .time-table {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 40px;
+
+                .day {
+                    margin: 10px 0px;
+                }
+
+
+                .time-table-row {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+
+                    .column {
+                        height: 150px;
+                        min-height: 60px;
+                        width: 20%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        box-sizing: border-box;
+                        color: black;
+                        padding: 5px 25px;
+
+
+                        .subject {
+                            width: 100%;
+                            text-align: center;
+                        }
+
+                        .time-duration {
+                            display: flex;
+                            width: 100%;
+                            flex-direction: row;
+                            justify-content: space-between;
+                        }
+                    }
+
+                    .column:nth-child(even) {
+                        background-color: #ffffff;
+                    }
+
+                    .column:nth-child(odd) {
+                        background-color: #f7faff;
+                    }
+                }
+
+
+
+            }
+
+
+
+
+        }
+
+
+    }
+
+}
+
+a {
+    all: unset;
+}
+
+@media screen and (max-width:$desktop-avg) {
+
+    .time-table-container {
+
+        .time-table-section {
+            left: 11vw;
+            width: 88vw;
+            padding: 5px;
+
+            .main-container {
+
+                .subcontainer {
+                    padding: 10px;
+
+
+                }
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width:$mobile-max) {
+
+    .time-table-container {
+
+
+        .time-table-section {
+
+            left: 0;
+            width: 98%;
+            right: 0;
+            margin: auto;
+
+            .main-container {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 10px;
+
+                .time-table {
+                  
+
+
+                    .time-table-row {
+                        flex-direction: column;
+                        width: 100%;
+
+
+                        .column {
+                            height: 80px;
+                            width: 100%;
+                            flex-direction: column;
+                            padding: 10px 50px;
+
+
+                          
+                        }
+
+                       
+                    }
+
+
+
+                }
+
+
+
+
+            }
+
+        }
+
+    }
+
+}

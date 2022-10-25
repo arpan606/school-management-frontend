@@ -6,6 +6,7 @@ import { AssignmentComponent } from './assignment/assignment.component';
 import { ChatsComponent } from './chats/chats.component';
 import { GradesComponent } from './grades/grades.component';
 import { HomeComponent } from './home/home.component';
+import { TimeTableComponent } from './time-table/time-table.component';
 
 
 
@@ -33,6 +34,10 @@ const routes: Routes = [
     {
         path: 'chat',
         component: ChatsComponent,
+    },
+    {
+        path: 'time-table',
+        component: TimeTableComponent,
     },
 ];
 
