@@ -62,7 +62,7 @@ export class AssignmentComponent implements OnInit {
             },
             error: (error: any) => {
                 console.error("Error =>", error);
-                this.toastr.error('ERROR', 'SERVER OFFLINE');
+                // this.toastr.error('ERROR', 'SERVER OFFLINE');
             },
         });
 
@@ -103,7 +103,7 @@ export class AssignmentComponent implements OnInit {
             },
             error: (error: any) => {
                 console.error("Error =>", error);
-                this.toastr.error('ERROR', 'SERVER OFFLINE');
+                // this.toastr.error('ERROR', 'SERVER OFFLINE');
 
             },
         });

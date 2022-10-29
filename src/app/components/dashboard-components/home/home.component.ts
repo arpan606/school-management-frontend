@@ -1,6 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Chart, ChartConfiguration } from 'chart.js';
+import { ToastrService } from 'ngx-toastr';
 import { timer } from 'rxjs';
 import { IUserAtttendance, IUserMarks, } from '../../../interface/graph.interface';
 import { StoreStateService } from '../../../services/store-state.service';
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
 
 
 
-    constructor(public storeStateService: StoreStateService, private userService: UserService) {
+    constructor(public storeStateService: StoreStateService, private userService: UserService,private toastr: ToastrService) {
 
     }
 
@@ -121,7 +122,7 @@ export class HomeComponent implements OnInit {
             },
             error: (error) => {
                 console.error("Error =>", error);
-                // this.toastr.error('ERROR', 'SERVER OFFLINE');
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
             }
         });
     }

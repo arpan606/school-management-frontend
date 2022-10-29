@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { ToastrService } from 'ngx-toastr';
 import { TimeTable } from '../../../interface/time-table.interface';
 import { TimeTableService } from '../../../services/time-table.service';
 
@@ -12,7 +13,7 @@ export class TimeTableComponent implements OnInit {
 
     timeTableArray: TimeTable[] = []
 
-    constructor(private timeTableService: TimeTableService) { }
+    constructor(private timeTableService: TimeTableService,private toastr: ToastrService) { }
 
     ngOnInit(): void {
         this.fetchTimeTable();
@@ -51,7 +52,7 @@ export class TimeTableComponent implements OnInit {
             },
             error: (error) => {
                 console.error("Error =>", error);
-                // this.toastr.error('ERROR', 'SERVER OFFLINE');
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
             }
         });
     }

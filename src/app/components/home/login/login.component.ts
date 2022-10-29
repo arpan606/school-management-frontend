@@ -38,10 +38,15 @@ export class LoginComponent implements OnInit {
             schoolId: this.schoolId
         };
 
+        if (!this.userId || !this.password || !this.schoolId) {
+            this.toastr.info("FAILURE", 'INVALID CREDENTIALS');
+            return;
+        }
+
 
         this.authService.login(loginCredentials).subscribe({
             next: (res) => {
-
+                console.log(res);
                 if (res.status == "SUCCESS") {
                     this.toastr.success('SUCCESS', 'LOGIN SUCCESSFULL');
 
@@ -64,15 +69,15 @@ export class LoginComponent implements OnInit {
 
                 }
                 else if (res.status == "FAILURE") {
-                    this.toastr.error("FAILURE", 'INVALID CREDENTIALS');
+                    this.toastr.info("FAILURE", 'INVALID CREDENTIALS');
                 }
                 else {
-                    this.toastr.error("FAILURE", 'INVALID REQUEST');
+                    this.toastr.info("FAILURE", 'INVALID REQUEST');
                 }
             },
             error: (error) => {
                 console.error("Error =>", error);
-                this.toastr.error('ERROR', 'SERVER OFFLINE');
+                this.toastr.info('ERROR', 'INVALID CREDENTAILS');
             }
         });
 
