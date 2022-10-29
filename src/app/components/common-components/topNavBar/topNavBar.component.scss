@@ -37,6 +37,27 @@
             }
         }
 
+        .logout-icon {
+            cursor: pointer;
+            position: relative;
+
+
+            .hover-text {
+                display: none;
+            }
+        }
+
+
+
+        .logout-icon:hover>.hover-text {
+            position: absolute;
+            display: flex;
+            color:tomato;
+            font-size: 15px;
+            top:100%;
+            left:-50%;
+        }
+
     }
 
 }

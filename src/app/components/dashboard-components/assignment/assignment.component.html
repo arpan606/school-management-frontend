@@ -5,179 +5,76 @@
         <div class="heading">
             <h2>Assignments</h2>
         </div>
-        <div class="upcoming-assignment-section">
+        <div class="upcoming-assignment-section" *ngIf="upcomingAssignmentArray.length>0">
             <div class="heading">
                 <h2>Upcoming Assignment</h2>
             </div>
             <div class="upcoming-assignment ">
-                <div class="upcoming-assignment-container">
+                <div class="upcoming-assignment-container" *ngFor="let assignment of upcomingAssignmentArray">
                     <div class="title">
-                        Unit Shell And Programming assignment
+                        {{assignment.title}}
                     </div>
                     <div class="sub-title">
-                        assignment 3
+                        {{assignment.classId}}
                     </div>
                     <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
+                        <div class="date">{{assignment.submissionDate}}</div>
+                        <div class="total-marks"> Total Marks : {{assignment.totalMarks}}</div>
                     </div>
-                    <button class="view-button" (click)="upcomingAssignment()">View Assignment </button>
+                    <button class="view-button">
+                        <a [href]="assignment.pdfLink">View Assignment </a>
+                    </button>
                 </div>
-
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <button class="view-button">View Assignment </button>
-                </div>
-
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <button class="view-button">View Assignment </button>
-                </div>
-
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <button class="view-button">View Assignment </button>
-                </div>
-
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <button class="view-button">View Assignment </button>
-                </div>
-
 
             </div>
         </div>
 
-        <div class="upcoming-assignment-section">
+        <div class="upcoming-assignment-section" *ngIf="pendingAssignmentArray.length>0">
             <div class="heading">
                 <h2>Pending Assignment</h2>
             </div>
             <div class="upcoming-assignment ">
                 <div class="upcoming-assignment-container" *ngFor="let assignment of pendingAssignmentArray">
                     <div class="title">
-                        Unit Shell And Programming assignment
+                        {{assignment.title}}
                     </div>
                     <div class="sub-title">
-                        {{assignment.title}}
+                        {{assignment.classId}}
                     </div>
                     <div class="submission">
                         <div class="date">{{assignment.submissionDate}}</div>
-                        <div class="time"></div>
+                        <div class="total-marks">Total Marks : {{assignment.totalMarks}}</div>
                     </div>
-                    <button class="pending-button"> <a [href]=assignment.pdfLink >View Assignment</a>  </button>
+                    <button class="pending-button"> <a [href]=assignment.pdfLink>View Assignment</a> </button>
                 </div>
             </div>
         </div>
 
-        <div class="upcoming-assignment-section">
+        <div class="upcoming-assignment-section" *ngIf="submittedAssignmentArray.length>0">
             <div class="heading">
                 <h2>Submitted Assignment</h2>
             </div>
             <div class="upcoming-assignment ">
-                <div class="upcoming-assignment-container">
+                <div class="upcoming-assignment-container" *ngFor="let assignment of submittedAssignmentArray">
                     <div class="title">
-                        Unit Shell And Programming assignment
+                        {{assignment.title}}
                     </div>
                     <div class="sub-title">
-                        assignment 3
+                        {{assignment.subject}}
                     </div>
                     <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
+                        <div class="teacher-name">{{assignment.teacherName}}</div>
+                        <div class="teacher-image">
+                            <img [src]="assignment.teacherImageLink" alt="">
+                        </div>
                     </div>
                     <div class="submission">
-                        <div class="status">Status: 45789</div>
-                        <div class="marks obtained">Marks:47899</div>
+                        <div class="status">{{assignment.status}}</div>
+                        <div class="marks-obtained">{{assignment.marksObtained}}</div>
                     </div>
-                    <button class="submitted-button">Submitted</button>
+                    <button class="submitted-button" disabled >Submitted</button>
                 </div>
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <div class="submission">
-                        <div class="status">Status: 45789</div>
-                        <div class="marks obtained">Marks:47899</div>
-                    </div>
-                    <button class="submitted-button">Submitted</button>
-                </div>
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <div class="submission">
-                        <div class="status">Status: 45789</div>
-                        <div class="marks obtained">Marks:47899</div>
-                    </div>
-                    <button class="submitted-button">Submitted</button>
-                </div>
-                <div class="upcoming-assignment-container">
-                    <div class="title">
-                        Unit Shell And Programming assignment
-                    </div>
-                    <div class="sub-title">
-                        assignment 3
-                    </div>
-                    <div class="submission">
-                        <div class="date">Date: 45789</div>
-                        <div class="time">Time:47899</div>
-                    </div>
-                    <div class="submission">
-                        <div class="status">Status: 45789</div>
-                        <div class="marks obtained">Marks:47899</div>
-                    </div>
-                    <button class="submitted-button">Submitted</button>
-                </div>
+
 
 
             </div>
