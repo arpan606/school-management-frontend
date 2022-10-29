@@ -11,6 +11,8 @@ import { LoginComponent } from './components/home/login/login.component';
 import { LoginGuard } from './auth/login-guard';
 import { AuthTokenInterceptor } from './interceptors/auth-token.interceptor';
 import { Page404Component } from './components/home/page404/page404.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -37,6 +39,11 @@ import { Page404Component } from './components/home/page404/page404.component';
             tapToDismiss: true,
         }),
         ToastContainerModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          // Register the ServiceWorker as soon as the application is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        }),
         
     ],
     providers: [
