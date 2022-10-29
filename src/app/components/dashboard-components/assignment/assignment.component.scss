@@ -79,6 +79,7 @@
                         flex-direction: row;
                         justify-content: space-between;
                         align-items: center;
+                        margin-bottom: 10px;
 
                         .date {
                             font-size: 15px;
@@ -86,6 +87,32 @@
 
                         .time {
                             font-size: 15px;
+                        }
+
+                        .teacher-name {
+                            font-size: 15px;
+                        }
+
+                        .status{
+                            color:tomato;
+                        }
+
+                        .marks-obtained{
+                            color:rgb(129, 202, 129);
+                        }
+
+                        .teacher-image {
+                            height: 45px;
+                            width: 45px;
+                            img {
+                                width: 45px;
+                                aspect-ratio: 1;
+                                border-radius: 100%;
+                            }
+                        }
+
+                        .total-marks{
+                            color:tomato;
                         }
                     }
 
@@ -97,6 +124,7 @@
                         border: none;
                         color: #ffffff;
                         font-size: 16px;
+                        cursor: pointer;
                     }
 
                     .pending-button {
@@ -107,6 +135,8 @@
                         border: none;
                         color: #ffffff;
                         font-size: 16px;
+                        cursor: pointer;
+
                     }
 
                     .submitted-button {
@@ -117,6 +147,8 @@
                         border: none;
                         color: #ffffff;
                         font-size: 16px;
+                        cursor: pointer;
+
                     }
 
                 }
@@ -138,39 +170,39 @@
 
 }
 
-a{
-    all:unset;
+a {
+    all: unset;
 }
 
 @media screen and (max-width:$desktop-avg) {
 
     .assignment-container {
-    
+
         .assignment-section {
-            left:12%;
-            width:87vw;
-           
+            left: 12%;
+            width: 87vw;
+
         }
-    
-     
-    
+
+
+
     }
-    
+
 }
 
 @media screen and (max-width:$mobile-max) {
 
     .assignment-container {
-    
+
         .assignment-section {
-            width:98%;
+            width: 98%;
             margin: auto;
             left: 0;
             padding: 25px;
         }
-    
-     
-    
+
+
+
     }
-    
+
 }

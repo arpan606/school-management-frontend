@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IPendingAssigment } from '../../../interface/assignment.interface';
+import { IPendingAssigment, ISubmittedAssigment, IUpcomingAssigment } from '../../../interface/assignment.interface';
 import { AssignmentService } from '../../../services/assignment.service';
 
 @Component({
@@ -11,6 +11,8 @@ export class AssignmentComponent implements OnInit {
 
 
     pendingAssignmentArray: IPendingAssigment[] = [];
+    submittedAssignmentArray: ISubmittedAssigment[] = [];
+    upcomingAssignmentArray: IUpcomingAssigment[] = [];
 
 
     constructor(private assignmentService: AssignmentService) { }
@@ -33,6 +35,23 @@ export class AssignmentComponent implements OnInit {
                 if (res.status == "SUCCESS") {
 
                     console.log(res);
+
+
+                    for (let i = 0; i < res.data.length; i += 1) {
+
+                        let { submissionDate } = res.data[i];
+                        const splitDate = submissionDate.split('T');
+
+                        const assignment: IUpcomingAssigment = {
+                            pdfLink: res.data[i].pdfLink,
+                            submissionDate: splitDate[0],
+                            title: res.data[i].title,
+                            totalMarks: res.data[i].totalMarks,
+                            classId: res.data[i].classId
+                        }
+
+                        this.upcomingAssignmentArray.push(assignment);
+                    }
 
                 }
                 else {
@@ -57,17 +76,17 @@ export class AssignmentComponent implements OnInit {
 
                     for (let i = 0; i < res.data.length; i += 1) {
 
-                        //converting timestamp to date
                         let { submissionDate } = res.data[i];
-                        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                        var lastDate = new Date(submissionDate);
+                        const splitDate = submissionDate.split('T');
+                        console.log(splitDate)
 
-                   
+
                         let assignment: IPendingAssigment = {
                             pdfLink: res.data[i].pdfLink,
-                            submissionDate: lastDate.toString(),
+                            submissionDate: splitDate[0],
                             title: res.data[i].title,
                             totalMarks: res.data[i].totalMarks,
+                            classId: res.data[i].classId
                         }
 
                         this.pendingAssignmentArray.push(assignment);
@@ -94,7 +113,18 @@ export class AssignmentComponent implements OnInit {
 
                 if (res.status == "SUCCESS") {
 
-                    console.log(res);
+                    for (let i = 0; i < res.data.length; i += 1) {
+                        const assignment: ISubmittedAssigment = {
+                            title: res.data[i].title,
+                            teacherName: res.data[i].teacherName,
+                            teacherImageLink: res.data[i].teacherImageLink,
+                            subject: res.data[i].subject,
+                            status: res.data[i].status,
+                            marksObtained: res.data[i].marksObtained
+                        }
+
+                        this.submittedAssignmentArray.push(assignment);
+                    }
 
 
 
@@ -111,6 +141,7 @@ export class AssignmentComponent implements OnInit {
         });
 
     }
+
 
 
 

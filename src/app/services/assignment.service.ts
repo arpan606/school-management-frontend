@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs/internal/Observable';
 import { backendHeaders, environment } from 'src/environments/environment';
 import { ILoginRequest } from '../interface/auth.interface';
+import { StoreStateService } from './store-state.service';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +16,7 @@ export class AssignmentService {
     private submittedAssignmentUrl = environment.submittedAssignment;
 
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private storeStateService: StoreStateService) {
 
     }
 
@@ -23,6 +24,9 @@ export class AssignmentService {
     getPendingAssignment(): Observable<any> {
         return this.httpClient.get(this.pendingAssignmentUrl,
             {
+                params: {
+                    studentId: this.storeStateService.studentId$.value
+                },
                 headers: backendHeaders
             },
         );
@@ -31,6 +35,9 @@ export class AssignmentService {
     getUpcomingAssignment(): Observable<any> {
         return this.httpClient.get(this.upcomingAssignmentUrl,
             {
+                params: {
+                    classId: this.storeStateService.classId$.value
+                },
                 headers: backendHeaders
             },
         );
@@ -39,6 +46,9 @@ export class AssignmentService {
     getSubmittedAssignment(): Observable<any> {
         return this.httpClient.get(this.submittedAssignmentUrl,
             {
+                params: {
+                    studentId: this.storeStateService.studentId$.value
+                },
                 headers: backendHeaders
             },
         );

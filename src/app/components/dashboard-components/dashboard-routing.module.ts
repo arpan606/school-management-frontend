@@ -32,10 +32,6 @@ const routes: Routes = [
         component: AccountComponent,
     },
     {
-        path: 'chat',
-        component: ChatsComponent,
-    },
-    {
         path: 'time-table',
         component: TimeTableComponent,
     },
