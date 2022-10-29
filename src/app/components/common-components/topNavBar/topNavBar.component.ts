@@ -19,8 +19,11 @@ export class TopNavBarComponent implements OnInit {
     }
 
     logoutUser() {
+        
         window.location.reload();
         this.authService.userLoggedOut();
+
+        //  CLEAR LOCAL STORAGE ON LOGOUT
         localStorage.clear();
     }
 

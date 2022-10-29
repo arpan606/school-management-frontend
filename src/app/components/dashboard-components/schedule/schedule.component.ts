@@ -10,7 +10,7 @@ import { TimeTableService } from '../../../services/time-table.service';
 })
 export class ScheduleComponent implements OnInit {
 
-    todayTimeTable!:any;
+    todayTimeTable!: any;
 
     constructor(private timeTableService: TimeTableService) { }
 
@@ -23,11 +23,7 @@ export class ScheduleComponent implements OnInit {
     fetchTodayTimeTable() {
         this.timeTableService.getTodayClassTimeTable().subscribe({
             next: (res) => {
-
-
                 if (res.status.toUpperCase() === "SUCCESS") {
-
-
                     this.todayTimeTable = {
                         firstPeriod: res.data.firstPeriod,
                         secondPeriod: res.data.secondPeriod,
@@ -39,12 +35,10 @@ export class ScheduleComponent implements OnInit {
                         eigthPeriod: res.data.eigthPeriod,
                     }
 
-                    console.log(this.todayTimeTable);
-
                 }
                 else {
 
-                    this.todayTimeTable={};
+                    this.todayTimeTable = {};
                     // this.toastr.error("FAILURE", 'INVALID REQUEST');
                 }
             },

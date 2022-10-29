@@ -21,6 +21,9 @@ export class AccountComponent implements OnInit {
     constructor(private storeStateService: StoreStateService) { }
 
     ngOnInit(): void {
+
+        // GET USER PROFILE VALUES FROM STORE STATE SERVICE 
+
         this.firstName = this.storeStateService.firstName$.value;
         this.lastName = this.storeStateService.lastName$.value;
         this.email = this.storeStateService.email$.value;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { IPendingAssigment, ISubmittedAssigment, IUpcomingAssigment } from '../../../interface/assignment.interface';
 import { AssignmentService } from '../../../services/assignment.service';
 
@@ -15,7 +16,7 @@ export class AssignmentComponent implements OnInit {
     upcomingAssignmentArray: IUpcomingAssigment[] = [];
 
 
-    constructor(private assignmentService: AssignmentService) { }
+    constructor(private assignmentService: AssignmentService, private toastr: ToastrService) { }
 
 
 
@@ -26,7 +27,7 @@ export class AssignmentComponent implements OnInit {
         this.submittedAssignment();
     }
 
-
+    //FETCH USER UPCOMING ASSIGNMENT
     upcomingAssignment() {
 
         this.assignmentService.getUpcomingAssignment().subscribe({
@@ -34,8 +35,7 @@ export class AssignmentComponent implements OnInit {
 
                 if (res.status == "SUCCESS") {
 
-                    console.log(res);
-
+                    // this.toastr.success('SUCCESS', 'SUCCESSFULLY FETCHED UPCOMING ASSIGNMENT');
 
                     for (let i = 0; i < res.data.length; i += 1) {
 
@@ -55,18 +55,20 @@ export class AssignmentComponent implements OnInit {
 
                 }
                 else {
-                    // this.toastr.warning(TOASTR_MSG.INVALID_CUSTOMER, TOASTR_TITLE.FAILURE);
+                    // this.toastr.warning('FAILURE', 'INVALID REQUEST');
+                    this.upcomingAssignmentArray = [];
                 }
 
             },
             error: (error: any) => {
                 console.error("Error =>", error);
-                // this.toastr.error(TOASTR_MSG.UNABLE_TO_CONNECT, TOASTR_TITLE.ERROR);
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
             },
         });
 
     }
 
+    //FETCH USER PENDING ASSIGNMENT
     pendingAssignment() {
 
         this.assignmentService.getPendingAssignment().subscribe({
@@ -74,12 +76,12 @@ export class AssignmentComponent implements OnInit {
 
                 if (res.status == "SUCCESS") {
 
+                    // this.toastr.success('SUCCESS', 'SUCCESSFULLY FETCHED PENDING ASSIGNMENT');
+
                     for (let i = 0; i < res.data.length; i += 1) {
 
                         let { submissionDate } = res.data[i];
                         const splitDate = submissionDate.split('T');
-                        console.log(splitDate)
-
 
                         let assignment: IPendingAssigment = {
                             pdfLink: res.data[i].pdfLink,
@@ -94,24 +96,30 @@ export class AssignmentComponent implements OnInit {
 
                 }
                 else {
-                    // this.toastr.warning(TOASTR_MSG.INVALID_CUSTOMER, TOASTR_TITLE.FAILURE);
+                    // this.toastr.warning('FAILURE', 'INVALID REQUEST');
+                    this.pendingAssignmentArray = [];
                 }
 
             },
             error: (error: any) => {
                 console.error("Error =>", error);
-                // this.toastr.error(TOASTR_MSG.UNABLE_TO_CONNECT, TOASTR_TITLE.ERROR);
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
+
             },
         });
 
     }
 
+    //FETCH USER SUBMITTED ASSIGNMENT
     submittedAssignment() {
 
         this.assignmentService.getSubmittedAssignment().subscribe({
             next: (res) => {
 
                 if (res.status == "SUCCESS") {
+
+                    // this.toastr.success('SUCCESS', 'SUCCESSFULLY FETCHED SUBMITTED ASSIGNMENT');
+
 
                     for (let i = 0; i < res.data.length; i += 1) {
                         const assignment: ISubmittedAssigment = {
@@ -126,17 +134,16 @@ export class AssignmentComponent implements OnInit {
                         this.submittedAssignmentArray.push(assignment);
                     }
 
-
-
                 }
                 else {
-                    // this.toastr.warning(TOASTR_MSG.INVALID_CUSTOMER, TOASTR_TITLE.FAILURE);
+                    // this.toastr.warning('FAILURE', 'INVALID REQUEST');
+                    this.submittedAssignmentArray = [];
                 }
 
             },
             error: (error: any) => {
                 console.error("Error =>", error);
-                // this.toastr.error(TOASTR_MSG.UNABLE_TO_CONNECT, TOASTR_TITLE.ERROR);
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
             },
         });
 
