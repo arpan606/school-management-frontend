@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     }
 
     handleLoginRequest() {
-      
+
 
         const loginCredentials: ILoginRequest = {
             userId: this.userId,
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
                         classId: res.data.classId,
                         profilePicture: res.data.imageLink,
                         jwtToken: res.data.token,
-                        studentId:loginCredentials.userId
+                        studentId: loginCredentials.userId
                     }
 
 
@@ -64,15 +64,15 @@ export class LoginComponent implements OnInit {
 
                 }
                 else if (res.status == "FAILURE") {
-                    // this.toastr.error("FAILURE", 'INVALID REQUEST');
+                    this.toastr.error("FAILURE", 'INVALID CREDENTIALS');
                 }
                 else {
-                    // this.toastr.error("FAILURE", 'INVALID REQUEST');
+                    this.toastr.error("FAILURE", 'INVALID REQUEST');
                 }
             },
             error: (error) => {
                 console.error("Error =>", error);
-                // this.toastr.error('ERROR', 'SERVER OFFLINE');
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
             }
         });
 

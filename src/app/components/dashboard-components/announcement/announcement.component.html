@@ -5,8 +5,10 @@
     </div>
     <div class="announcement-body-container">
         <div class="sub-container" *ngFor="let circular of announcementArray" (click)="navigateToCircular(circular.link)">
-            
-            <div class="title">{{circular.title}} </div>
+            <div class="circular-image">
+                <img [src]="circular.image" alt="">
+            </div>
+            <div class="title"> {{circular.title}} </div>
         </div>
        
     </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartConfiguration } from 'chart.js';
+import { ToastrService } from 'ngx-toastr';
 import { UserSubject } from '../../../interface/grades.interface';
 import { IUserMarks } from '../../../interface/graph.interface';
 import { UserService } from '../../../services/user.service';
@@ -16,7 +17,7 @@ export class GradesComponent implements OnInit {
     paperTotalMarks!: UserSubject;
 
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService,private toastr: ToastrService) { }
 
     ngOnInit(): void {
         this.paperTotalMarks = {
@@ -38,9 +39,7 @@ export class GradesComponent implements OnInit {
             next: (res) => {
 
                 if (res.status.toUpperCase() === "SUCCESS") {
-                    // this.toastr.success('SUCCESS', 'LOGIN SUCCESSFULL');
-
-                    console.log(res);
+                    // this.toastr.success('SUCCESS', 'USER MARKS FETCHED SUCCESSFULLY');
 
                     for (let i = 0; i < res.data.length; i += 1) {
 
@@ -56,20 +55,16 @@ export class GradesComponent implements OnInit {
                         }
 
                         this.userMarksArray.push(userMarks);
-
-
                     }
-
-                    console.log(this.userMarksArray);
 
                 }
                 else {
-                    // this.toastr.error("FAILURE", 'INVALID REQUEST');
+                    // this.toastr.failure("FAILURE", 'INVALID REQUEST');
                 }
             },
             error: (error) => {
                 console.error("Error =>", error);
-                // this.toastr.error('ERROR', 'SERVER OFFLINE');
+                this.toastr.error('ERROR', 'SERVER OFFLINE');
             }
         });
     }
