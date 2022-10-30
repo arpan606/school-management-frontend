@@ -115,6 +115,21 @@
                     }
 
 
+                    .guest-mode {
+                        width: 100%;
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: flex-end;
+
+                        div {
+                            color: #1f28eb;
+                            font-size: 15px;
+                            margin-top: 10px;
+                            cursor: pointer;
+                        }
+                    }
+
+
                 }
 
 
