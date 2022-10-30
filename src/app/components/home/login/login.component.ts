@@ -87,6 +87,16 @@ export class LoginComponent implements OnInit {
 
     }
 
+    handleGuestLogin() {
+
+        this.userId = 'ST001';
+        this.password = '11223344';
+        this.schoolId = '1';
+
+        this.handleLoginRequest();
+
+    }
+
 
 
 }

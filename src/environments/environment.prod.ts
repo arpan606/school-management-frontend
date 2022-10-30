@@ -1,7 +1,7 @@
 import { HttpHeaders } from "@angular/common/http";
 
 
-const schoolManagementServerUrl: string = 'http://localhost:5000/'
+const schoolManagementServerUrl: string = 'https://student-dashboard.onrender.com/'
 
 export const environment = {
     production: true,
